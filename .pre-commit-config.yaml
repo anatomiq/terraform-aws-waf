@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      # Git style
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-vcs-permalinks
+      - id: forbid-new-submodules
+
+      # Common errors
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: check-merge-conflict
+
+      # Cross platform
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: [--fix=lf]
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.99.4
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_docs
+        args:
+          - --hook-config=--add-to-existing-file=true
+          - --args=--lockfile=false
+      - id: terraform_trivy
+        stages: [ manual ]
+        args:
+          - --args=--skip-dirs="**/.terraform"
+      - id: terraform_tflint
+        stages: [ manual ]
+        args:
+          - >
+            --args=--disable-rule=terraform_module_pinned_source
