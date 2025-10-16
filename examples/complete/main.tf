@@ -3,6 +3,7 @@ module "waf" {
 
   name                   = var.name
   scope                  = "REGIONAL"
+  description            = "WAF ACL"
   enable_waf_association = true
   associate_resource_arn = "arn:aws:elasticloadbalancing:us-east-1:111122223333:loadbalancer/app/lb"
   managed_rules = [

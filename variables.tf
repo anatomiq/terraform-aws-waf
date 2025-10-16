@@ -10,6 +10,11 @@ variable "name_prefix" {
   default     = null
 }
 
+variable "description" {
+  description = "(Optional) Friendly description of the WebACL"
+  type        = string
+}
+
 variable "scope" {
   description = "(Required, Forces new resource) Specifies whether this is for an AWS CloudFront distribution or for a regional application. Valid values are CLOUDFRONT or REGIONAL. To work with CloudFront, you must also specify the region us-east-1 (N. Virginia) on the AWS provider"
   type        = string
