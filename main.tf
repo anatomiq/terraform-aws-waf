@@ -3,7 +3,7 @@
 resource "aws_wafv2_web_acl" "default" {
   name        = var.name_prefix != null ? null : var.name
   name_prefix = var.name_prefix
-  description = "WAF ACL for ${var.name}"
+  description = var.description
   scope       = var.scope
 
   default_action {

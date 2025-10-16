@@ -143,6 +143,7 @@ No modules.
 | <a name="input_custom_block_response_content"></a> [custom\_block\_response\_content](#input\_custom\_block\_response\_content) | (Optional) Map of custom block response bodies (key = response body name, value = body content) | `map(string)` | `{}` | no |
 | <a name="input_custom_block_response_content_type"></a> [custom\_block\_response\_content\_type](#input\_custom\_block\_response\_content\_type) | (Required) Type of content in the payload that you are defining in the content argument. Valid values are TEXT\_PLAIN, TEXT\_HTML, or APPLICATION\_JSON | `string` | `"TEXT_PLAIN"` | no |
 | <a name="input_default_action"></a> [default\_action](#input\_default\_action) | (Required) Action to perform if none of the rules contained in the WebACL match | `string` | `"allow"` | no |
+| <a name="input_description"></a> [description](#input\_description) | (Optional) Friendly description of the WebACL | `string` | n/a | yes |
 | <a name="input_enable_custom_block_response"></a> [enable\_custom\_block\_response](#input\_enable\_custom\_block\_response) | (Optional) This enables custom responses for the block requests | `bool` | `false` | no |
 | <a name="input_enable_logging_configuration"></a> [enable\_logging\_configuration](#input\_enable\_logging\_configuration) | (Optional) Whether to enable logging configuration for the WAF | `bool` | `false` | no |
 | <a name="input_enable_waf_association"></a> [enable\_waf\_association](#input\_enable\_waf\_association) | (Optional) Whether to enable WAF association | `bool` | `false` | no |
